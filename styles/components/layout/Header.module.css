@@ -1,0 +1,29 @@
+.container {
+  width: 94%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #ffff;
+  position: absolute;
+  left: 100px;
+  margin-top: 0.25%;
+  padding: 20px;
+}
+.subcontainer-left {
+  display: flex;
+  align-items: center;
+  color: black;
+  font-weight: bold;
+}
+.subcontainer-left p {
+  margin-left: 10px;
+}
+
+.subcontainer-right {
+  width: 20vw;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  color: black;
+  font-weight: bold;
+}
