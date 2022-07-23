@@ -1,16 +1,16 @@
 .container {
-  min-height: 90%;
-  width: 70vw;
-  display: flex;
-  justify-content: center;
-  position: absolute;
-  top: 85px;
-  align-items: center;
+    min-height: 90%;
+    width: 70vw;
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    top: 85px;
+    align-items: center;
 
-  /* left: calc(1vw+70px); */
-  left: 100px;
-  background-color: rgba(255, 255, 255, 0.244);
-  /* margin-top: 20px; */
+    /* left: calc(1vw+70px); */
+    left: 100px;
+    background-color: rgba(255, 255, 255, 0.244);
+    /* margin-top: 20px; */
 }
 
 /* .mainContainer{

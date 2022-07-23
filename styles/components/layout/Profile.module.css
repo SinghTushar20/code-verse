@@ -1,26 +1,26 @@
 .container {
-  height: 90%;
-  width: 20%;
-  background-color: red;
-  position: absolute;
-  right: 1%;
-  top: 85px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  border-radius: 10px;
+    height: 90%;
+    width: 20%;
+    background-color: red;
+    position: absolute;
+    right: 1%;
+    top: 85px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 10px;
 }
 
 .user-info {
-  height: 50%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .coding-info {
-  height: 50%;
-  width: 100%;
-  background-color: #7885ee;
+    height: 50%;
+    width: 100%;
+    background-color: #7885ee;
 }

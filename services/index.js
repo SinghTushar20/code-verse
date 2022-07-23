@@ -1,3 +1,3 @@
-import authService from "./auth";
+import authService from './auth';
 
 export { authService };

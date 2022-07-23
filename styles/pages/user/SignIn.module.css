@@ -1,50 +1,50 @@
 .container {
-  display: flex;
-  height: 100%;
-  width: 100%;
-  color: rgb(87, 86, 86);
+    display: flex;
+    height: 100%;
+    width: 100%;
+    color: rgb(87, 86, 86);
 }
 
 .container-image {
-  width: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .logIn-input {
-  border: none;
-  border-bottom: 1px solid grey;
-  background-color: transparent;
-  height: 30px;
-  width: 100%;
+    border: none;
+    border-bottom: 1px solid grey;
+    background-color: transparent;
+    height: 30px;
+    width: 100%;
 }
 
 .btn {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  padding: 10px;
-  color: white;
-  margin-top: 20px;
-  border: none;
-  font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 10px;
+    color: white;
+    margin-top: 20px;
+    border: none;
+    font-weight: bold;
 }
 
 .logIn {
-  background-color: #7885ee;
+    background-color: #7885ee;
 }
 
 .logIn-google {
-  background-color: #ff7900;
-  font-weight: bold;
+    background-color: #ff7900;
+    font-weight: bold;
 }
 
 .btn svg {
-  height: 90%;
-  aspect-ratio: 1/1;
-  margin-left: -34px;
+    height: 90%;
+    aspect-ratio: 1/1;
+    margin-left: -34px;
 }
 
 /* .signIn-link {

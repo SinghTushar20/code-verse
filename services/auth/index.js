@@ -1,6 +1,6 @@
-import logInWithGoogle from './logInWithGoogle'
-import logOut from './logOut'
+import logInWithGoogle from './logInWithGoogle';
+import logOut from './logOut';
 
-const authService = { logInWithGoogle, logOut }
+const authService = { logInWithGoogle, logOut };
 
-export default authService
+export default authService;
