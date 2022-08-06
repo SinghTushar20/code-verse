@@ -1,8 +1,11 @@
 import Image from 'next/image';
 import Link from 'next/link';
+
 import { authService } from '../../services';
-import svg from '../../public/icons/sample.svg';
+
 import style from '../../styles/pages/user/SignIn.module.css';
+
+import svg from '../../public/icons/sample.svg';
 
 function MyApp({ Component, pageProps }) {
     return (
@@ -43,7 +46,9 @@ function MyApp({ Component, pageProps }) {
                 </button>
                 <h3>
                     {"Don't have a account? "}
-                    <Link href="/signIn">Sign In</Link>
+                    <Link href="http://localhost:3000/user/SignUp">
+                        Sign In
+                    </Link>
                 </h3>
             </div>
         </div>

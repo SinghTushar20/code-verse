@@ -10,19 +10,19 @@ function LeftNav({ Component, pageProps }) {
         <div className={styles.container}>
             <div className={styles.list}>
                 <Image src={svg} alt="Site Logo" />
-                <Link href="/contestList">
+                <Link href="/">
                     <Image src={svg} alt="Site Logo" />
                 </Link>
-                <Link href="/analysis">
+                <Link href="/info/analysis">
                     <Image src={svg} alt="Site Logo" />
                 </Link>
-                <Link href="/scoreCard">
+                <Link href="/resume/score-card">
                     <Image src={svg} alt="Site Logo" />
                 </Link>
-                <Link href="/contestList">
+                <Link href="/contest-list/contest">
                     <Image src={svg} alt="Site Logo" />
                 </Link>
-                <Link href="/tips">
+                <Link href="/info/tips">
                     <Image src={svg} alt="Site Logo" />
                 </Link>
             </div>

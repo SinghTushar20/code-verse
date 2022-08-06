@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import Link from 'next/link';
 
 import svg from '../../public/icons/sample.svg';
 
@@ -13,7 +14,9 @@ function MyApp({ Component, pageProps }) {
             </div>
             <div className={style['subcontainer-right']}>
                 <Image src={svg} alt="site main logo"></Image>
-                <Image src={svg} alt="site main logo"></Image>
+                <Link href="/features/notification">
+                    <Image src={svg} alt="Site Logo" />
+                </Link>
                 <p> Robin (userName) </p>{' '}
             </div>
         </div>

@@ -6,10 +6,10 @@ import style from '../styles/components/Layout.module.css';
 function Layout({ children }) {
     return (
         <div>
-            <Header />
-            <Profile />
             <LeftNav />
+            <Header />
             <main className={style.container}>{children}</main>
+            <Profile />
         </div>
     );
 }

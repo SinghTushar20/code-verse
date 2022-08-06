@@ -18,9 +18,16 @@ body {
     width: 100vw;
     height: 100vh;
     box-sizing: border-box;
+    overflow: hidden;
 }
 
 a {
     color: inherit;
     text-decoration: none;
+}
+Link {
+    cursor: crosshair;
+}
+li {
+    list-style-type: none;
 }
