@@ -43,10 +43,10 @@ export default function Home() {
                 </p>
 
                 <div className={styles['submit-options']}>
-                    <button className={styles['singIn']}>
-                        <Link href="user/SignUp">SignUp</Link>
+                    <button className={styles[('singIn', 'btn')]}>
+                        <Link href="user/SignUp">Sign Up</Link>
                     </button>
-                    <button>
+                    <button className={styles['btn']}>
                         <Link href="/user/LogIn"> Log In</Link>
                     </button>
                 </div>
