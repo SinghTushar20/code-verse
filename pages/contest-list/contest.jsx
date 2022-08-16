@@ -152,7 +152,7 @@ const MyApp = () => {
                 </div>
             </div>
             <div className={styles.title}>
-                <p>sr No.</p>
+                <p>Sr No.</p>
                 <p>contest Name </p>
                 <p>Location</p>
                 <p>Start Time </p>
