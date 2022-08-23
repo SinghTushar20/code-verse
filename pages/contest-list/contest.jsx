@@ -1,43 +1,59 @@
 import axios from 'axios';
-import { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import styles from '../../styles/pages/constest-list/contest.module.css';
 
 const MyApp = () => {
-    const [upcoming, setUpcoming] = useState({
-        title: 'hackathon',
-        desc: '',
-        location: 'hackerEarth',
-        time: { start: '', end: '', zone: '' },
-    });
-    const [show, setShow] = useState([
-        {
-            title: 'hackathon',
-            desc: '',
-            location: 'hackerEarth',
-            time: { start: 'fdsfdsf', end: 'fdfds', zone: '' },
-        },
-    ]);
+
+    const allData = React.useRef(null);
+    const [show, setShow] = useState(null);
     const [status, setStatus] = useState(false);
     const [sites, setSites] = useState(false);
     const [time, setTime] = useState(false);
+    const siteTag = {
+        hackerEarth: "hackerearth.com",
+        hackerRank:"hackerrank.com",
+        codeForces:"codeforces.com",
+        leetcode:"leetcode.com",
+        geeksForGeeks:"gfg.com",
+    }
 
-    const [active, setActive] = useState('');
-    const url = 'https://contests-api.herokuapp.com/upcoming';
+    const [filterData , setFilterData]=useState(
+        {
+                [siteTag.hackerEarth]:false,
+                [siteTag.hackerRank]:false,
+                [siteTag.codeForces]:false,
+                [siteTag.leetcode]:false,
+                [siteTag.geeksForGeeks]:false,
+        }
+    )
+
+    const [active, setActive] = useState(''); 
+
     useEffect(() => {
+        const url = 'https://contests-api.herokuapp.com/upcoming';
         axios
             .get(url)
-            .then((Response) => {
-                console.log(Response.data.data);
-                setUpcoming(Response.data.data);
-                setShow(Response.data.data);
+            .then((res) => {
+                allData.current = res.data.data;
+                setShow(res.data.data);
+                console.log(res)
             })
             .catch((err) => {
                 console.log(err);
             })
-            .then(() => {
-                console.log('request send');
-            });
     }, []);
+
+    useEffect(()=>{
+        console.log(Object.entries)
+        if(Object.entries(filterData).filter((e) => e[1]).length === 0) {
+            setShow(allData.current)
+        }else{
+            setShow(allData.current.filter((data)=> 
+            filterData[data.location]
+            ))
+        }
+    }, [filterData])
+
     const handleStatusClick = () => {
         if (status == true) {
             setStatus(false);
@@ -59,6 +75,15 @@ const MyApp = () => {
             setTime(true);
         }
     };
+   
+    const activeFilter = (e) => {
+        const filter = e.target.value;
+        setFilterData({
+            ...filterData,
+            [filter]: !filterData[filter]
+        })
+    }
+    
 
     return (
         <div className={styles.container}>
@@ -71,8 +96,9 @@ const MyApp = () => {
                     <input
                         type="checkbox"
                         id="active"
-                        name="status-active"
+                        name="active-status"
                         value="active"
+                       
                     />
                     <label htmlFor="active-status">Active Contest</label>
                     <input
@@ -81,44 +107,69 @@ const MyApp = () => {
                         name="status-upcoming"
                         value="upcoming"
                     />
-                    <label htmlFor="upcoming">Upcomin Contest</label>
+                    <label htmlFor="upcoming">Upcoming Contest</label>
                 </div>
                 <div className={sites ? styles.showFilter : styles.hideFilter}>
+
                     <input
                         type="checkbox"
                         id="hackerEarth"
                         name="hackerEarth"
-                        value="hackerEarth"
+                      
+                        value="hackerearth.com"
+                        onClick={activeFilter}
                     />
-                    <label htmlFor="active-status">HackerEarth</label>
+                    <label htmlFor="hackerEarth">HackerEarth</label>
+
+
                     <input
                         type="checkbox"
-                        id="hackerEarth"
-                        name="hackerEarth"
-                        value="hackerEarth"
+                        id="hackerRank"
+                        name="hackerRank"
+                        value="hackerrank.com"
+                        onClick={activeFilter}
+
                     />
-                    <label htmlFor="active-status">HackerRank</label>
+                    <label htmlFor="hackerRank">HackerRank</label>
+
+
                     <input
                         type="checkbox"
-                        id="hackerEarth"
-                        name="hackerEarth"
-                        value="hackerEarth"
+                        id="codeForces"
+                        name="codeForces"
+                        value="codeforces.com"
+                        onClick={activeFilter}
+
                     />
-                    <label htmlFor="active-status">CodeForces</label>
+                    <label htmlFor="codeForces">CodeForces</label>
+
                     <input
                         type="checkbox"
-                        id="hackerEarth"
-                        name="hackerEarth"
-                        value="hackerEarth"
+                        id="leetcode"
+                        name="leetcode"
+                        value="leetcode.com"
+                        onClick={activeFilter}
+
                     />
-                    <label htmlFor="active-status">Leetcode</label>
+                    <label htmlFor="leetcode">Leetcode</label>
                     <input
                         type="checkbox"
-                        id="hackerEarth"
-                        name="hackerEarth"
-                        value="hackerEarth"
+                        id="geeksForGeeks"
+                        name="geeksForGeeks"
+                        value="geeksforgeeks.org"
+                        onClick={activeFilter}
+
                     />
-                    <label htmlFor="active-status">GeekForGeeks</label>
+                    <label htmlFor="geeksForGeeks">GeeksForGeeks</label>
+                       <input
+                        type="checkbox"
+                        id="codeChef"
+                        name="codeChef"
+                        value="codechef.com"
+                        onClick={activeFilter}
+
+                    />
+                    <label htmlFor="codeChef">CodeChef</label>
                 </div>
                 <div className={time ? styles.showFilter : styles.hideFilter}>
                     <input
@@ -160,10 +211,10 @@ const MyApp = () => {
             </div>
             <div className={styles.contests}>
                 <div className={styles['contest-list']}>
-                    {show.map((see) => {
+                    {show ? show.map((see ,index) => {
                         return (
                             <div className={styles.contest} key={see.key}>
-                                <p>{'1'}</p>
+                                <p>{index+1}</p>
                                 <a href={see.desc.slice(5)} target="_a">
                                     {see.title}
                                 </a>
@@ -172,7 +223,7 @@ const MyApp = () => {
                                 <p>{see.time.end}</p>
                             </div>
                         );
-                    })}
+                    }): <h1>Loading...</h1>}
                 </div>
             </div>
         </div>
