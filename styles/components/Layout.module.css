@@ -10,6 +10,7 @@
     /* left: calc(1vw+70px); */
     left: 100px;
     background-color: rgba(255, 255, 255, 0.244);
+    /* background:red; */
 
     /* background-color: rgba(255, 255, 255, 0.547); */
     /* box-shadow: 0px 0px 5px grey; */
@@ -27,3 +28,11 @@
       justify-content: center;
       align-items: center;
   } */
+@media (max-width:480px){
+    .container{
+        width:100vw;
+        height:88vh;    
+        top:6vh;
+        left:0px;
+    }
+}

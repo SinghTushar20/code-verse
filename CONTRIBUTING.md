@@ -28,7 +28,7 @@ In general, we follow the ["fork-and-pull" Git workflow](https://github.com/susa
 
 1. Fork the repository to your own Github account
 1. Clone the project to your machine by running `git clone <repository_url>`
-1. Get the required dependencies for your projects with `npm i` and run all tests to make sure everything is alright.
+1. Get the required dependencies for your projects with `npm i or yarn` and run all tests to make sure everything is alright.
 1. Make sure you use prettier and to run the development server use:
     ```bash
     npm run dev

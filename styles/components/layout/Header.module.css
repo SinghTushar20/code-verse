@@ -1,4 +1,6 @@
 .container {
+    
+    overflow-y: hidden;
     width: 94vw;
     display: flex;
     justify-content: space-between;
@@ -29,4 +31,19 @@
     align-items: center;
     color: black;
     font-weight: bold;
+}
+@media (max-width:480px){
+    .container{
+        width:100vw;
+        /* background:red; */
+        left:0px;
+        padding:5px;
+        height:6vh;
+    }
+    .subcontainer-right {
+        width:40vw;
+    }
+    .subcontainer-left p {
+        margin-left:0px;
+    }
 }

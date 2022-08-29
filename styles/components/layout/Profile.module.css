@@ -76,3 +76,10 @@
 .contest-Alert-notif {
     display: flex;
 }
+
+
+@media (max-width:480px){
+    .container{
+        display:none;
+    }
+}

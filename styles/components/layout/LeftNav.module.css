@@ -13,6 +13,7 @@
     box-shadow: 0px 0px 5px rgb(204, 202, 202), 0px 0px 3px white inset;
 }
 
+
 .list {
     display: flex;
     flex-direction: column;
@@ -24,4 +25,31 @@
     display: flex;
     justify-content: center;
     margin-bottom: 10px;
+}
+
+
+@media (max-width:480px){
+    .container{
+        /* background:red; */
+        width:100vw;
+        height:6vh;
+        flex-direction:row;
+        top:auto;
+        padding:0;
+        bottom:0vh;
+        z-index:1;
+    }
+    .list{
+        min-height:4vh;
+        flex-direction:row ;
+        justify-content: space-between  ;
+        width:90vw;
+    }
+    .logout{
+        margin-bottom:0px;
+          
+        
+        
+    }
+
 }
