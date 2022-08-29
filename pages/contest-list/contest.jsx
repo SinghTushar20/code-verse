@@ -27,7 +27,7 @@ const MyApp = () => {
         }
     )
 
-    const [active, setActive] = useState(''); 
+    // const [active, setActive] = useState(''); 
 
     useEffect(() => {
         const url = 'https://contests-api.herokuapp.com/upcoming';
@@ -44,8 +44,8 @@ const MyApp = () => {
     }, []);
 
     useEffect(()=>{
-        console.log(Object.entries)
-        if(Object.entries(filterData).filter((e) => e[1]).length === 0) {
+        // console.log(Object.entries+" we are in line 47")
+        if(Object.entries(filterData).filter((e) =>e[1]).length === 0) {
             setShow(allData.current)
         }else{
             setShow(allData.current.filter((data)=> 
